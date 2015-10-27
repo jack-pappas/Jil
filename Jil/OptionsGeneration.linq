@@ -61,7 +61,7 @@ void Main()
 		options.AppendLine($@"        public static readonly Options {name} = new Options({string.Join(", ", permutation.Where(p => p.Param != "").Select(p => p.Param))});");
 
 		typeCaches.AppendLine($@"
-    class {permutation.GetTypeCacheName()} : ISerializeOptions
+    struct {permutation.GetTypeCacheName()} : ISerializeOptions
     {{
         {string.Join("\n        ", permutation.Select(p => p.TypeCacheProperty))}
     }}");

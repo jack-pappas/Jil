@@ -22,7 +22,7 @@ namespace Jil.Serialize
     }
 
     static class TypeCache<TOptions, T>
-        where TOptions : ISerializeOptions, new()
+        where TOptions : struct, ISerializeOptions
     {
         static readonly object ThunkInitLock = new object();
         static volatile bool ThunkBeingBuilt = false;
@@ -78,7 +78,7 @@ namespace Jil.Serialize
     }
 
     // Start OptionsGeneration.linq generated content
-    class MicrosoftStyle : ISerializeOptions
+    struct MicrosoftStyle : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -89,7 +89,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrint : ISerializeOptions
+    struct MicrosoftStylePrettyPrint : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -100,7 +100,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNulls : ISerializeOptions
+    struct MicrosoftStyleExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -111,7 +111,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleJSONP : ISerializeOptions
+    struct MicrosoftStyleJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -122,7 +122,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleInherited : ISerializeOptions
+    struct MicrosoftStyleInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -133,7 +133,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleUtc : ISerializeOptions
+    struct MicrosoftStyleUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -144,7 +144,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleCamelCase : ISerializeOptions
+    struct MicrosoftStyleCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -155,7 +155,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNulls : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -166,7 +166,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONP : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -177,7 +177,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintInherited : ISerializeOptions
+    struct MicrosoftStylePrettyPrintInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -188,7 +188,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -199,7 +199,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -210,7 +210,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONP : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -221,7 +221,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsInherited : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -232,7 +232,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsUtc : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -243,7 +243,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -254,7 +254,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleJSONPInherited : ISerializeOptions
+    struct MicrosoftStyleJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -265,7 +265,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleJSONPUtc : ISerializeOptions
+    struct MicrosoftStyleJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -276,7 +276,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleJSONPCamelCase : ISerializeOptions
+    struct MicrosoftStyleJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -287,7 +287,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleInheritedUtc : ISerializeOptions
+    struct MicrosoftStyleInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -298,7 +298,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStyleInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -309,7 +309,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -320,7 +320,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONP : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -331,7 +331,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsInherited : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -342,7 +342,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -353,7 +353,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -364,7 +364,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPInherited : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -375,7 +375,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -386,7 +386,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -397,7 +397,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintInheritedUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -408,7 +408,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -419,7 +419,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -430,7 +430,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPInherited : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -441,7 +441,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPUtc : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -452,7 +452,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -463,7 +463,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsInheritedUtc : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -474,7 +474,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -485,7 +485,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -496,7 +496,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleJSONPInheritedUtc : ISerializeOptions
+    struct MicrosoftStyleJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -507,7 +507,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleJSONPInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStyleJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -518,7 +518,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleJSONPUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -529,7 +529,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -540,7 +540,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -551,7 +551,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -562,7 +562,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -573,7 +573,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -584,7 +584,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -595,7 +595,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -606,7 +606,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPInheritedUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -617,7 +617,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -628,7 +628,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -639,7 +639,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -650,7 +650,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -661,7 +661,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -672,7 +672,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -683,7 +683,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -694,7 +694,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -705,7 +705,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -716,7 +716,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -727,7 +727,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -738,7 +738,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -749,7 +749,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -760,7 +760,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStyleExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStyleExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -771,7 +771,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MicrosoftStylePrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -782,7 +782,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601 : ISerializeOptions
+    struct ISO8601 : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -793,7 +793,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrint : ISerializeOptions
+    struct ISO8601PrettyPrint : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -804,7 +804,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNulls : ISerializeOptions
+    struct ISO8601ExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -815,7 +815,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601JSONP : ISerializeOptions
+    struct ISO8601JSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -826,7 +826,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601Inherited : ISerializeOptions
+    struct ISO8601Inherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -837,7 +837,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601Utc : ISerializeOptions
+    struct ISO8601Utc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -848,7 +848,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601CamelCase : ISerializeOptions
+    struct ISO8601CamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -859,7 +859,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNulls : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -870,7 +870,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintJSONP : ISerializeOptions
+    struct ISO8601PrettyPrintJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -881,7 +881,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintInherited : ISerializeOptions
+    struct ISO8601PrettyPrintInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -892,7 +892,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintUtc : ISerializeOptions
+    struct ISO8601PrettyPrintUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -903,7 +903,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -914,7 +914,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsJSONP : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -925,7 +925,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsInherited : ISerializeOptions
+    struct ISO8601ExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -936,7 +936,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsUtc : ISerializeOptions
+    struct ISO8601ExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -947,7 +947,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -958,7 +958,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601JSONPInherited : ISerializeOptions
+    struct ISO8601JSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -969,7 +969,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601JSONPUtc : ISerializeOptions
+    struct ISO8601JSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -980,7 +980,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601JSONPCamelCase : ISerializeOptions
+    struct ISO8601JSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -991,7 +991,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601InheritedUtc : ISerializeOptions
+    struct ISO8601InheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1002,7 +1002,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601InheritedCamelCase : ISerializeOptions
+    struct ISO8601InheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1013,7 +1013,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601UtcCamelCase : ISerializeOptions
+    struct ISO8601UtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1024,7 +1024,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONP : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1035,7 +1035,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsInherited : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1046,7 +1046,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsUtc : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1057,7 +1057,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1068,7 +1068,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintJSONPInherited : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1079,7 +1079,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintJSONPUtc : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1090,7 +1090,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintJSONPCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1101,7 +1101,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintInheritedUtc : ISerializeOptions
+    struct ISO8601PrettyPrintInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1112,7 +1112,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintInheritedCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1123,7 +1123,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1134,7 +1134,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsJSONPInherited : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1145,7 +1145,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsJSONPUtc : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1156,7 +1156,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1167,7 +1167,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsInheritedUtc : ISerializeOptions
+    struct ISO8601ExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1178,7 +1178,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1189,7 +1189,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsUtcCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1200,7 +1200,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601JSONPInheritedUtc : ISerializeOptions
+    struct ISO8601JSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1211,7 +1211,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601JSONPInheritedCamelCase : ISerializeOptions
+    struct ISO8601JSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1222,7 +1222,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601JSONPUtcCamelCase : ISerializeOptions
+    struct ISO8601JSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1233,7 +1233,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601InheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601InheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1244,7 +1244,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1255,7 +1255,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1266,7 +1266,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1277,7 +1277,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1288,7 +1288,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1299,7 +1299,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1310,7 +1310,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintJSONPInheritedUtc : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1321,7 +1321,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintJSONPInheritedCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1332,7 +1332,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintJSONPUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1343,7 +1343,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1354,7 +1354,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1365,7 +1365,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601ExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1376,7 +1376,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1387,7 +1387,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1398,7 +1398,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601JSONPInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601JSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1409,7 +1409,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1420,7 +1420,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1431,7 +1431,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1442,7 +1442,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1453,7 +1453,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1464,7 +1464,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601ExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601ExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return false; } }
@@ -1475,7 +1475,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class ISO8601PrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct ISO8601PrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.ISO8601; } }
         public bool PrettyPrint { get { return true; } }
@@ -1486,7 +1486,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class Milliseconds : ISerializeOptions
+    struct Milliseconds : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1497,7 +1497,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrint : ISerializeOptions
+    struct MillisecondsPrettyPrint : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1508,7 +1508,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNulls : ISerializeOptions
+    struct MillisecondsExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1519,7 +1519,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsJSONP : ISerializeOptions
+    struct MillisecondsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1530,7 +1530,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsInherited : ISerializeOptions
+    struct MillisecondsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1541,7 +1541,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsUtc : ISerializeOptions
+    struct MillisecondsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1552,7 +1552,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsCamelCase : ISerializeOptions
+    struct MillisecondsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1563,7 +1563,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNulls : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1574,7 +1574,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintJSONP : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1585,7 +1585,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintInherited : ISerializeOptions
+    struct MillisecondsPrettyPrintInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1596,7 +1596,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1607,7 +1607,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1618,7 +1618,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsJSONP : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1629,7 +1629,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsInherited : ISerializeOptions
+    struct MillisecondsExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1640,7 +1640,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsUtc : ISerializeOptions
+    struct MillisecondsExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1651,7 +1651,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1662,7 +1662,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsJSONPInherited : ISerializeOptions
+    struct MillisecondsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1673,7 +1673,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsJSONPUtc : ISerializeOptions
+    struct MillisecondsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1684,7 +1684,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsJSONPCamelCase : ISerializeOptions
+    struct MillisecondsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1695,7 +1695,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsInheritedUtc : ISerializeOptions
+    struct MillisecondsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1706,7 +1706,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsInheritedCamelCase : ISerializeOptions
+    struct MillisecondsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1717,7 +1717,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsUtcCamelCase : ISerializeOptions
+    struct MillisecondsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1728,7 +1728,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONP : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1739,7 +1739,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsInherited : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1750,7 +1750,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1761,7 +1761,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1772,7 +1772,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintJSONPInherited : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1783,7 +1783,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintJSONPUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1794,7 +1794,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintJSONPCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1805,7 +1805,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintInheritedUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1816,7 +1816,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintInheritedCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1827,7 +1827,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1838,7 +1838,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsJSONPInherited : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1849,7 +1849,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsJSONPUtc : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1860,7 +1860,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1871,7 +1871,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsInheritedUtc : ISerializeOptions
+    struct MillisecondsExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1882,7 +1882,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1893,7 +1893,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsUtcCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1904,7 +1904,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsJSONPInheritedUtc : ISerializeOptions
+    struct MillisecondsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1915,7 +1915,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsJSONPInheritedCamelCase : ISerializeOptions
+    struct MillisecondsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1926,7 +1926,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsJSONPUtcCamelCase : ISerializeOptions
+    struct MillisecondsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1937,7 +1937,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -1948,7 +1948,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1959,7 +1959,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1970,7 +1970,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1981,7 +1981,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -1992,7 +1992,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2003,7 +2003,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2014,7 +2014,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintJSONPInheritedUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2025,7 +2025,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintJSONPInheritedCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2036,7 +2036,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintJSONPUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2047,7 +2047,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2058,7 +2058,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2069,7 +2069,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2080,7 +2080,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2091,7 +2091,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2102,7 +2102,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2113,7 +2113,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2124,7 +2124,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2135,7 +2135,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2146,7 +2146,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2157,7 +2157,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2168,7 +2168,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2179,7 +2179,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class MillisecondsPrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct MillisecondsPrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.MillisecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2190,7 +2190,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123 : ISerializeOptions
+    struct RFC1123 : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2201,7 +2201,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrint : ISerializeOptions
+    struct RFC1123PrettyPrint : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2212,7 +2212,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNulls : ISerializeOptions
+    struct RFC1123ExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2223,7 +2223,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123JSONP : ISerializeOptions
+    struct RFC1123JSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2234,7 +2234,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123Inherited : ISerializeOptions
+    struct RFC1123Inherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2245,7 +2245,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123Utc : ISerializeOptions
+    struct RFC1123Utc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2256,7 +2256,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123CamelCase : ISerializeOptions
+    struct RFC1123CamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2267,7 +2267,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNulls : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2278,7 +2278,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintJSONP : ISerializeOptions
+    struct RFC1123PrettyPrintJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2289,7 +2289,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintInherited : ISerializeOptions
+    struct RFC1123PrettyPrintInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2300,7 +2300,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintUtc : ISerializeOptions
+    struct RFC1123PrettyPrintUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2311,7 +2311,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2322,7 +2322,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsJSONP : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2333,7 +2333,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsInherited : ISerializeOptions
+    struct RFC1123ExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2344,7 +2344,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsUtc : ISerializeOptions
+    struct RFC1123ExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2355,7 +2355,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2366,7 +2366,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123JSONPInherited : ISerializeOptions
+    struct RFC1123JSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2377,7 +2377,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123JSONPUtc : ISerializeOptions
+    struct RFC1123JSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2388,7 +2388,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123JSONPCamelCase : ISerializeOptions
+    struct RFC1123JSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2399,7 +2399,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123InheritedUtc : ISerializeOptions
+    struct RFC1123InheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2410,7 +2410,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123InheritedCamelCase : ISerializeOptions
+    struct RFC1123InheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2421,7 +2421,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123UtcCamelCase : ISerializeOptions
+    struct RFC1123UtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2432,7 +2432,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONP : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2443,7 +2443,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsInherited : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2454,7 +2454,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsUtc : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2465,7 +2465,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2476,7 +2476,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintJSONPInherited : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2487,7 +2487,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintJSONPUtc : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2498,7 +2498,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintJSONPCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2509,7 +2509,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintInheritedUtc : ISerializeOptions
+    struct RFC1123PrettyPrintInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2520,7 +2520,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintInheritedCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2531,7 +2531,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2542,7 +2542,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsJSONPInherited : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2553,7 +2553,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsJSONPUtc : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2564,7 +2564,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2575,7 +2575,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsInheritedUtc : ISerializeOptions
+    struct RFC1123ExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2586,7 +2586,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2597,7 +2597,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsUtcCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2608,7 +2608,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123JSONPInheritedUtc : ISerializeOptions
+    struct RFC1123JSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2619,7 +2619,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123JSONPInheritedCamelCase : ISerializeOptions
+    struct RFC1123JSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2630,7 +2630,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123JSONPUtcCamelCase : ISerializeOptions
+    struct RFC1123JSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2641,7 +2641,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123InheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123InheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2652,7 +2652,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2663,7 +2663,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2674,7 +2674,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2685,7 +2685,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2696,7 +2696,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2707,7 +2707,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2718,7 +2718,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintJSONPInheritedUtc : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2729,7 +2729,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintJSONPInheritedCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2740,7 +2740,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintJSONPUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2751,7 +2751,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2762,7 +2762,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2773,7 +2773,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123ExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2784,7 +2784,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2795,7 +2795,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2806,7 +2806,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123JSONPInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123JSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2817,7 +2817,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2828,7 +2828,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2839,7 +2839,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2850,7 +2850,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2861,7 +2861,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2872,7 +2872,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123ExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123ExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return false; } }
@@ -2883,7 +2883,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class RFC1123PrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct RFC1123PrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.RFC1123; } }
         public bool PrettyPrint { get { return true; } }
@@ -2894,7 +2894,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class Seconds : ISerializeOptions
+    struct Seconds : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2905,7 +2905,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrint : ISerializeOptions
+    struct SecondsPrettyPrint : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2916,7 +2916,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsExcludeNulls : ISerializeOptions
+    struct SecondsExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2927,7 +2927,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsJSONP : ISerializeOptions
+    struct SecondsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2938,7 +2938,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsInherited : ISerializeOptions
+    struct SecondsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2949,7 +2949,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsUtc : ISerializeOptions
+    struct SecondsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2960,7 +2960,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsCamelCase : ISerializeOptions
+    struct SecondsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -2971,7 +2971,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNulls : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNulls : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2982,7 +2982,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintJSONP : ISerializeOptions
+    struct SecondsPrettyPrintJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -2993,7 +2993,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintInherited : ISerializeOptions
+    struct SecondsPrettyPrintInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3004,7 +3004,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintUtc : ISerializeOptions
+    struct SecondsPrettyPrintUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3015,7 +3015,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3026,120 +3026,10 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsJSONP : ISerializeOptions
+    struct SecondsExcludeNullsJSONP : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsInherited : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsJSONPInherited : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsJSONPUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsJSONPCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsInheritedUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsInheritedCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsUtcCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsPrettyPrintExcludeNullsJSONP : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return true; } }
         public bool ExcludeNulls { get { return true; } }
         public bool JSONP { get { return true; } }
         public bool IncludeInherited { get { return false; } }
@@ -3147,7 +3037,117 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsInherited : ISerializeOptions
+    struct SecondsExcludeNullsInherited : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsExcludeNullsUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsExcludeNullsCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsJSONPInherited : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsJSONPUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsJSONPCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsInheritedUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsInheritedCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsUtcCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsPrettyPrintExcludeNullsJSONP : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return true; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsPrettyPrintExcludeNullsInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3158,7 +3158,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsUtc : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3169,7 +3169,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3180,7 +3180,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintJSONPInherited : ISerializeOptions
+    struct SecondsPrettyPrintJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3191,7 +3191,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintJSONPUtc : ISerializeOptions
+    struct SecondsPrettyPrintJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3202,7 +3202,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintJSONPCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3213,7 +3213,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintInheritedUtc : ISerializeOptions
+    struct SecondsPrettyPrintInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3224,7 +3224,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintInheritedCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3235,7 +3235,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3246,120 +3246,10 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsJSONPInherited : ISerializeOptions
+    struct SecondsExcludeNullsJSONPInherited : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsJSONPUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsJSONPCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsExcludeNullsInheritedUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsExcludeNullsInheritedCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsExcludeNullsUtcCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return true; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsJSONPInheritedUtc : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
-    }
-
-    class SecondsJSONPInheritedCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsJSONPUtcCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return true; } }
-        public bool IncludeInherited { get { return false; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsInheritedUtcCamelCase : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return false; } }
-        public bool ExcludeNulls { get { return false; } }
-        public bool JSONP { get { return false; } }
-        public bool IncludeInherited { get { return true; } }
-        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
-        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
-    }
-
-    class SecondsPrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
-    {
-        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
-        public bool PrettyPrint { get { return true; } }
         public bool ExcludeNulls { get { return true; } }
         public bool JSONP { get { return true; } }
         public bool IncludeInherited { get { return true; } }
@@ -3367,7 +3257,117 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
+    struct SecondsExcludeNullsJSONPUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsExcludeNullsJSONPCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsExcludeNullsInheritedUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsExcludeNullsInheritedCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsExcludeNullsUtcCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsJSONPInheritedUtc : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsJSONPInheritedCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsJSONPUtcCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return false; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsInheritedUtcCamelCase : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return false; } }
+        public bool ExcludeNulls { get { return false; } }
+        public bool JSONP { get { return false; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsUTC; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
+    }
+
+    struct SecondsPrettyPrintExcludeNullsJSONPInherited : ISerializeOptions
+    {
+        public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
+        public bool PrettyPrint { get { return true; } }
+        public bool ExcludeNulls { get { return true; } }
+        public bool JSONP { get { return true; } }
+        public bool IncludeInherited { get { return true; } }
+        public UnspecifiedDateTimeKindBehavior DateTimeKindBehavior { get { return UnspecifiedDateTimeKindBehavior.IsLocal; } }
+        public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
+    }
+
+    struct SecondsPrettyPrintExcludeNullsJSONPUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3378,7 +3378,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsJSONPCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3389,7 +3389,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3400,7 +3400,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3411,7 +3411,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3422,7 +3422,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintJSONPInheritedUtc : ISerializeOptions
+    struct SecondsPrettyPrintJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3433,7 +3433,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintJSONPInheritedCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3444,7 +3444,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintJSONPUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3455,7 +3455,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3466,7 +3466,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct SecondsExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3477,7 +3477,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct SecondsExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3488,7 +3488,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct SecondsExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3499,7 +3499,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3510,7 +3510,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3521,7 +3521,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsJSONPInheritedUtc : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3532,7 +3532,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.Verbatim; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsJSONPInheritedCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3543,7 +3543,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsJSONPUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3554,7 +3554,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3565,7 +3565,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
@@ -3576,7 +3576,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return false; } }
@@ -3587,7 +3587,7 @@ namespace Jil.Serialize
         public SerializationNameFormat SerializationNameFormat { get { return SerializationNameFormat.CamelCase; } }
     }
 
-    class SecondsPrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
+    struct SecondsPrettyPrintExcludeNullsJSONPInheritedUtcCamelCase : ISerializeOptions
     {
         public DateTimeFormat DateFormat { get { return DateTimeFormat.SecondsSinceUnixEpoch; } }
         public bool PrettyPrint { get { return true; } }
